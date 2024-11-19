@@ -8,15 +8,10 @@ import { FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
 export default function Header() {
   const currentPath = usePathname();
   const hiddenRoutes = ['/room'];
-  if (hiddenRoutes.some(route => currentPath.startsWith(route))) {
-    return null;
-  }
+
+  // Hooks: siempre se inicializan
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLLIElement | null>(null);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -31,22 +26,31 @@ export default function Header() {
     };
   }, []);
 
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
   const handleLinkClick = () => {
     setIsOpen(false);
   };
+
+  // Lógica condicional después de los hooks
+  if (hiddenRoutes.some(route => currentPath.startsWith(route))) {
+    return null;
+  }
 
   return (
     <header className="fixed top-0 left-0 w-full bg-white text-black py-4 shadow-md z-50">
       <div className="container mx-auto flex justify-between items-center">
         <h1 className="bg-gradient-to-r from-orange-400 via-purple-600 to-blue-500 bg-clip-text font-semibold font-Goldplay text-transparent text-3xl">
           {'FAMILY WEB'}
-          
         </h1>
         <nav>
           <ul className="flex space-x-4">
-            
             <li>
-              <Link href="/" className="hover:underline">Inicio</Link>
+              <Link href="/" className="hover:underline">
+                Inicio
+              </Link>
             </li>
             <li className="relative">
               <button
@@ -62,7 +66,10 @@ export default function Header() {
                   exit={{ opacity: 0, y: -10 }}
                   className="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg rounded-lg"
                 >
-                  <div className="p-4 border-b border-gray-200 hover:bg-gray-100" onClick={handleLinkClick}>
+                  <div
+                    className="p-4 border-b border-gray-200 hover:bg-gray-100"
+                    onClick={handleLinkClick}
+                  >
                     <Link href="/reuniones" className="text-gray-800">
                       Anuncio de reuniones
                     </Link>
@@ -76,25 +83,31 @@ export default function Header() {
               )}
             </li>
             <li>
-              <Link href="/equipo" className="hover:underline">Nuestros Psicologos y T.S</Link>
+              <Link href="/equipo" className="hover:underline">
+                Nuestros Psicologos y T.S
+              </Link>
             </li>
             <li>
-              <Link href="#" className="hover:underline">Ayuda con Inteligencia Artificial</Link>
+              <Link href="#" className="hover:underline">
+                Ayuda con Inteligencia Artificial
+              </Link>
             </li>
             <li>
-              <Link href="#" className="hover:underline">Foros</Link>
+              <Link href="#" className="hover:underline">
+                Foros
+              </Link>
             </li>
             <div className="flex mb-1 space-x-4">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <FaFacebook className="text-2xl text-gray-800 hover:text-blue-500" />
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <FaTwitter className="text-2xl text-gray-800 hover:text-blue-400" />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin className="text-2xl text-gray-800 hover:text-blue-700" />
-          </a>
-        </div>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <FaFacebook className="text-2xl text-gray-800 hover:text-blue-500" />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <FaTwitter className="text-2xl text-gray-800 hover:text-blue-400" />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <FaLinkedin className="text-2xl text-gray-800 hover:text-blue-700" />
+              </a>
+            </div>
           </ul>
         </nav>
       </div>

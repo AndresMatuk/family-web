@@ -13,7 +13,7 @@ export default function VideoCall() {
 
   useEffect(() => {
     setFullName("");
-  }, []);
+  }, [setFullName]);
 
   return (
     <div className="flex w-full h-screen bg-gray-900">
