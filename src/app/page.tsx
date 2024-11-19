@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Carousel from './components/carousel';
 import Footer from './components/footer';
+import Image from 'next/image';
+
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -81,9 +83,12 @@ export default function Home() {
 
       {/* Sección de imágenes a la derecha */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:w-1/2">
-        <img src="https://via.placeholder.com/150" alt="Imagen 1" className="rounded-lg shadow-md" />
-        <img src="https://via.placeholder.com/150" alt="Imagen 2" className="rounded-lg shadow-md" />
-        <img src="https://via.placeholder.com/150" alt="Imagen 3" className="rounded-lg shadow-md" />
+        <Image src="/img.jpg" width={450} 
+    height={450}  alt="Imagen 1" className="rounded-lg shadow-md" />
+        <Image src="/img.jpg" width={450} 
+    height={450}  alt="Imagen 2" className="rounded-lg shadow-md" />
+        <Image src="/img.jpg" width={450} 
+    height={450}  alt="Imagen 3" className="rounded-lg shadow-md" />
       </div>
     </section>
 

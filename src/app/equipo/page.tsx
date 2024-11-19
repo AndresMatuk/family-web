@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
 import Footer from '../components/footer';
 import { profesionales } from '../data/profesionalesData';
+import Image from 'next/image';
 
 
 export default function Team() {
@@ -55,9 +56,11 @@ export default function Team() {
               seleccionado === profesional.nombre ? 'w-full flex h-96' : 'w-1/5 h-[390px]' 
             }`}
           >
-            <img
+            <Image
               src={profesional.imagen}
               alt={profesional.nombre}
+              width={500}
+              height={500}
               className={`rounded-md mb-2 ${
                 seleccionado === profesional.nombre ? 'w-48 h-48' : 'w-full h-48'
               } object-cover`}

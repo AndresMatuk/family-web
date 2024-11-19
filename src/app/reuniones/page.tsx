@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { profesionales, sections } from '../data/profesionalesData';
+import Image from 'next/image';
 
 const temas = ['Salud Mental', 'Comunicación', 'Resolución de Conflictos', 'Crianza'];
 
@@ -99,9 +100,11 @@ const profesionalesMostrados = verMas ? profesionales : profesionales.slice(0, 4
           profesionalSeleccionado === profesional.nombre ? 'bg-blue-500' : ''
         }`}
       >
-        <img
+        <Image
           src={profesional.imagen}
           alt={profesional.nombre}
+          width={150} 
+          height={150} 
           className="w-full h-[180px] object-cover rounded-md mb-2"
         />
         <p>{profesional.nombre}</p>
