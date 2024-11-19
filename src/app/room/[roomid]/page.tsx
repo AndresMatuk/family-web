@@ -14,11 +14,13 @@ const Room = ({ params }: { params: Promise<{ roomid: string }> }) => {
     useEffect(() => {
         console.log('useEffect ejecutado');
 
+        // Solo ejecuta initRoom si aún no se ha unido a la sala y el contenedor está disponible
         if (containerRef.current && !isRoomJoined) {
             const appID = parseInt(process.env.NEXT_PUBLIC_ZEGO_APP_ID!);
             const serverSecret = process.env.NEXT_PUBLIC_ZEGO_SERVER_SECRET!;
 
             const initRoom = () => {
+                console.log('Inicializando la sala');
                 const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
                     appID,
                     serverSecret,
@@ -48,7 +50,7 @@ const Room = ({ params }: { params: Promise<{ roomid: string }> }) => {
                         mode: ZegoUIKitPrebuilt.VideoConference,
                     },
                 });
-                setIsRoomJoined(true); // Evita que se intente unir de nuevo
+                setIsRoomJoined(true); // Actualiza el estado para evitar múltiples llamadas
             };
 
             initRoom();
@@ -58,7 +60,7 @@ const Room = ({ params }: { params: Promise<{ roomid: string }> }) => {
             console.log('Limpiando efecto');
             // Aquí podrías agregar lógica de limpieza si el SDK de ZEGOCLOUD lo requiere
         };
-    }, [roomID, fullName, isRoomJoined]); // isRoomJoined se asegura de que el efecto se ejecute una sola vez
+    }, [roomID, fullName, isRoomJoined]);
 
     return (
         <div
