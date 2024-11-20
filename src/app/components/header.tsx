@@ -89,11 +89,6 @@ export default function Header() {
             </li>
             <li>
               <Link href="#" className="hover:underline">
-                Ayuda con Inteligencia Artificial
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className="hover:underline">
                 Foros
               </Link>
             </li>
@@ -112,5 +107,6 @@ export default function Header() {
         </nav>
       </div>
     </header>
+    
   );
 }
