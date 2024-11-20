@@ -7,7 +7,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <title>Mi Proyecto Next.js</title>
+        <title>Family Web</title>
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className="font-sans bg-gray-50">
