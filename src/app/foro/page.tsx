@@ -109,7 +109,7 @@ const Forum = () => {
                   </h3>
                   <p className="text-gray-700">{topic.message}</p>
                   <p className="text-sm text-gray-500 mt-2">
-                    {new Date(topic.createdAt.seconds * 1000).toLocaleString()}
+                    {topic.createdAt ? new Date(topic.createdAt.seconds * 1000).toLocaleString() : 'Fecha no disponible'}
                   </p>
                   <div className="mt-4 flex items-center space-x-4">
                     <button
