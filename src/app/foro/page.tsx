@@ -1,12 +1,12 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { db } from '../../utils/firebase';
-import { collection, addDoc, getDocs, query, orderBy } from 'firebase/firestore';
+import { collection, addDoc, getDocs, query, orderBy,Timestamp } from 'firebase/firestore';
 
 const Forum = () => {
   const [title, setTitle] = useState('');
   const [message, setMessage] = useState('');
-  const [topics, setTopics] = useState<{ id: string; title?: string; message?: string; createdAt?: any }[]>([]);
+  const [topics, setTopics] = useState<{ id: string; title?: string; message?: string; createdAt?: Timestamp }[]>([]);
   // Estado para almacenar los temas
 
   // Función para agregar un nuevo tema
