@@ -1,4 +1,6 @@
+'use client';
 import React from 'react';
+import Image from 'next/image';
 
 const Forum = () => {
   return (
@@ -45,7 +47,7 @@ const Forum = () => {
         {/* Contenedor principal del tema */}
         <div className="flex items-start space-x-4">
           {/* Imagen del tema */}
-          <img
+          <Image
             src={`https://picsum.photos/80?random=${id}`}
             alt={`Tema ${id}`}
             className="w-20 h-20 rounded object-cover"
@@ -62,7 +64,7 @@ const Forum = () => {
              {/* Imagen grande del tema */}
             {/* Información del usuario */}
             <div className="flex items-center space-x-3 mt-2">
-              <img
+              <Image
                 src={`https://i.pravatar.cc/40?img=${id}`}
                 alt={`Usuario ${id}`}
                 className="w-8 h-8 rounded-full"

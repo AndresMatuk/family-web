@@ -55,7 +55,7 @@ export default function Header() {
     >
 
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-3xl md:text-3xl font-bold text-[#2d0a3b]">
+        <h1 className="text-3xl md:text-3xl font-roboto font-bold text-[#2d0a3b]">
           {"FAMILY WEB"}
         </h1>
         <nav>

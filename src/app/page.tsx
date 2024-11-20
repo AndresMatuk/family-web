@@ -1,6 +1,6 @@
 "use client"; 
 import { motion } from 'framer-motion';
-import { useState, AnimationEvent } from 'react';
+import { useState } from 'react';
 import Carousel from './components/carousel';
 import Footer from './components/footer';
 import Image from 'next/image';
@@ -52,8 +52,8 @@ export default function Home() {
       </p>
     </div>
     {/* Título principal */}
-    <h2 className="text-3xl md:text-5xl font-bold text-[#2d0a3b] mb-4 p-4">
-    "7 de cada 10 familias <br className="hidden md:block" /> no saben dónde buscar apoyo profesional de forma accesible"
+    <h2 className="text-3xl md:text-5xl font-roboto font-bold text-[#2d0a3b] mb-4 p-4">
+    &quot;7 de cada 10 familias <br className="hidden md:block" /> no saben dónde buscar apoyo profesional de forma accesible&quot;
     </h2>
     {/* Descripción */}
     <p className="text-gray-600 text-2xl font-roboto mb-6 p-2">
@@ -71,7 +71,7 @@ export default function Home() {
         transition={{ duration: 1 }}
         viewport={{ once: true }}
       >
-         <p className="text-3xl text-center md:text-5xl font-bold text-gray-900 mb-4">
+         <p className="text-3xl text-center md:text-5xl font-roboto font-bold text-[#2d0a3b] mb-4">
          Bienvenido a FamilyWeb: Tu Aliado en el Bienestar Familiar
       </p>
       <p></p>
@@ -79,7 +79,7 @@ export default function Home() {
   En un mundo donde el bienestar emocional y la salud mental son más importantes que nunca, FamilyWeb se presenta como la solución integral que necesitas. Nuestra plataforma digital ofrece un acceso fácil y seguro a servicios de apoyo psicosocial, conectando a familias y profesionales de la salud mental en un entorno virtual que prioriza la comodidad y la confidencialidad.
 </p>
       <div className="p-6">
-      <p className="text-3xl text-center md:text-5xl font-bold text-gray-900 mb-4">
+      <p className="text-3xl text-center md:text-5xl font-roboto font-bold text-[#2d0a3b] mb-4">
         ¿Por qué elegir FamilyWeb?
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -97,10 +97,10 @@ export default function Home() {
                 alt={section.title}
                  className="w-12 h-12 mb-2"
               />
-             <h2 className="text-xl text-center font-semibold">{section.title}</h2>
+             <h2 className="text-2xl text-center font-semibold">{section.title}</h2>
             </div>
             {activeIndex === index && (
-              <p className="text-gray-700 transition-opacity duration-500">
+              <p className="text-gray-700 text-xl transition-opacity duration-500">
                 {section.content}
               </p>
             )}

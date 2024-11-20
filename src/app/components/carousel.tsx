@@ -27,7 +27,7 @@ export default function Carousel() {
       {/* Contenedor del texto y botón */}
       
       <div className="flex flex-col items-start space-y-6 max-w-[820px] pl-10 md:pl-20 lg:pl-32">
-        <h2 className="text-4xl md:text-5xl font-bold text-[#2d0a3b] leading-relaxed">
+        <h2 className="text-4xl md:text-5xl font-roboto font-bold text-[#2d0a3b] leading-relaxed">
           {slides[currentSlide]}
         </h2>
         <button className="bg-[#421575] text-white px-8 py-4 text-lg rounded-md hover:bg-[#2d0a3b] transition-all">
