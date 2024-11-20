@@ -6,7 +6,8 @@ import { collection, addDoc, getDocs, query, orderBy } from 'firebase/firestore'
 const Forum = () => {
   const [title, setTitle] = useState('');
   const [message, setMessage] = useState('');
-  const [topics, setTopics] = useState([]); // Estado para almacenar los temas
+  const [topics, setTopics] = useState<{ id: string; title?: string; message?: string; createdAt?: any }[]>([]);
+  // Estado para almacenar los temas
 
   // Función para agregar un nuevo tema
   const handleAddTopic = async () => {
