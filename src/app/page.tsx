@@ -15,17 +15,23 @@ export default function Home() {
 
   const sections = [
     {
-      title: "Family Web",
-      content: "La salud mental es esencial para la armonía y el bienestar en la familia."
+      title: "Acceso a Profesionales",
+      content:
+        "Conéctate con terapeutas y trabajadores sociales altamente capacitados, listos para apoyarte en momentos de crisis o simplemente para mejorar tu calidad de vida.",
+      icon: "/icons/iconProfesional.png",
     },
     {
-      title: "Family Web",
-      content: "El apoyo mutuo en los momentos difíciles fortalece los lazos familiares."
+      title: "Flexibilidad Total",
+      content:
+        "Agenda tus sesiones cuando más te convenga, ya sea a través de videollamadas, chats en línea o recursos interactivos. ¡Tú decides cómo y cuándo recibir ayuda!",
+      icon: "/icons/iconFlexibilidad.png",
     },
     {
-      title: "Family Web",
-      content: "La comunicación efectiva es la clave para resolver los conflictos."
-    }
+      title: "Comunidad de Apoyo",
+      content:
+        "Únete a foros y grupos donde podrás compartir experiencias y encontrar apoyo entre personas que comprenden tus desafíos.",
+      icon: "/icons/IconComunidad.png",
+    },
   ];
 
   return (
@@ -34,7 +40,7 @@ export default function Home() {
       <section className=" w-full">
         <Carousel />
       </section>
-      <section className="bg-white py-16">
+      <section className="py-16" style={{ backgroundImage: 'url(/fondo3.jpg)' }}>
   <div className="max-w-4xl mx-auto text-center p-12 px-6">
     {/* Calificaciones */}
     <div className="flex justify-center items-center space-x-6 mb-6">
@@ -46,13 +52,12 @@ export default function Home() {
       </p>
     </div>
     {/* Título principal */}
-    <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-    "¿Sabían que 7 de cada 10 <br className="hidden md:block" />
-    familias enfrentan conflictos que afectan su bienestar emocional y no saben dónde buscar apoyo profesional de forma accesible?"
+    <h2 className="text-3xl md:text-5xl font-bold text-[#2d0a3b] mb-4 p-4">
+    "7 de cada 10 familias <br className="hidden md:block" /> no saben dónde buscar apoyo profesional de forma accesible"
     </h2>
     {/* Descripción */}
-    <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
-    Las cifras muestran que el 60% de las familias que atraviesan situaciones de estrés o conflicto no reciben ningún tipo de orientación profesional. Muchas veces, esto se traduce en un ambiente de inestabilidad que impacta negativamente en la salud emocional de todos sus miembros, especialmente de los niños y adolescentes.
+    <p className="text-gray-600 text-2xl font-roboto mb-6 p-2">
+    El 60% de las familias que atraviesan situaciones de estrés o conflicto no reciben ningún tipo de orientación profesional. 
     </p>
     
   </div>
@@ -67,31 +72,42 @@ export default function Home() {
         viewport={{ once: true }}
       >
          <p className="text-3xl text-center md:text-5xl font-bold text-gray-900 mb-4">
-        Acerca de nosotros
+         Bienvenido a FamilyWeb: Tu Aliado en el Bienestar Familiar
       </p>
       <p></p>
-         <p className="text-gray-600 mb-6 p-11">
-        Nuestra marca es una plataforma para el desarrollo integral de la familia. Existe para mejorar el bienestar emocional y social de las familias, brindarles acceso a servicios y recursos de apoyo especializados. Nuestro propósito es fortalecer los lazos familiares y ofrecer herramientas accesibles que faciliten el crecimiento personal, la solución de conflictos y la estabilidad en el hogar. Nuestra marca es una plataforma para el desarrollo integral de la familia. Existe para mejorar el bienestar emocional y social de las familias, brindarles acceso a servicios y recursos de apoyo especializados. Nuestro propósito es fortalecer los lazos familiares y ofrecer herramientas accesibles que faciliten el crecimiento personal, la solución de conflictos y la estabilidad en el hogar. Nuestra marca es una plataforma para el desarrollo integral de la familia. Existe para mejorar el bienestar emocional y social de las familias, brindarles acceso a servicios y recursos de apoyo especializados. Nuestro propósito es fortalecer los lazos familiares y ofrecer herramientas accesibles que faciliten el crecimiento personal, la solución de conflictos y la estabilidad en el hogar.Nuestra marca es una plataforma para el desarrollo integral de la familia. Existe para mejorar el bienestar emocional y social de las familias, brindarles acceso a servicios y recursos de apoyo especializados. Nuestro propósito es fortalecer los lazos familiares y ofrecer herramientas accesibles que faciliten el crecimiento personal, la solución de conflictos y la estabilidad en el hogar. 
+      <p className="text-gray-600 text-2xl font-roboto mb-6 p-11">
+  En un mundo donde el bienestar emocional y la salud mental son más importantes que nunca, FamilyWeb se presenta como la solución integral que necesitas. Nuestra plataforma digital ofrece un acceso fácil y seguro a servicios de apoyo psicosocial, conectando a familias y profesionales de la salud mental en un entorno virtual que prioriza la comodidad y la confidencialidad.
+</p>
+      <div className="p-6">
+      <p className="text-3xl text-center md:text-5xl font-bold text-gray-900 mb-4">
+        ¿Por qué elegir FamilyWeb?
       </p>
-      <p></p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {sections.map((section, index) => (
-            <div
-              key={index}
-              onClick={() => toggleSection(index)}
-              className={`cursor-pointer p-6 bg-white text-gray-800 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 ${
-                activeIndex === index ? 'bg-white' : ''
-              }`}
-            >
-              <h2 className="text-xl text-center font-semibold mb-2">{section.title}</h2>
-              {activeIndex === index && (
-                <p className="text-gray-700 transition-opacity duration-500">
-                  {section.content}
-                </p>
-              )}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {sections.map((section, index) => (
+          <div
+            key={index}
+            onClick={() => toggleSection(index)}
+            className={`cursor-pointer p-6 bg-white text-gray-800 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 ${
+              activeIndex === index ? "bg-white" : ""
+            }`}
+          >
+            <div className="flex flex-col items-center justify-center mb-4">
+              <img
+                src={section.icon}
+                alt={section.title}
+                 className="w-12 h-12 mb-2"
+              />
+             <h2 className="text-xl text-center font-semibold">{section.title}</h2>
             </div>
-          ))}
-        </div>
+            {activeIndex === index && (
+              <p className="text-gray-700 transition-opacity duration-500">
+                {section.content}
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
       
         <section className="flex flex-col md:flex-row items-center justify-between py-[120px] px-8 bg-gray-100">
       

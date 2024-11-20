@@ -20,32 +20,22 @@ export default function Carousel() {
   }, [slides.length]);
 
   return (
-    <div className="relative h-screen bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center text-center text-white">
-      <div className="absolute inset-0 bg-gradient-to-r from-orange-400 via-purple-500 to-blue-500 opacity-70" />
-      <h2 className="relative text-4xl md:text-5xl font-bold px-4">
-        {slides[currentSlide]}
-      </h2>
-      <button
-        className="absolute left-0 text-white p-4"
-        onClick={() => setCurrentSlide((currentSlide - 1 + slides.length) % slides.length)}
-      >
-        &#8249;
-      </button>
-      <button
-        className="absolute right-0 text-white p-4"
-        onClick={() => setCurrentSlide((currentSlide + 1) % slides.length)}
-      >
-        &#8250;
-      </button>
+    <div
+      className="relative h-screen bg-cover bg-center bg-no-repeat flex items-center justify-between px-16 text-black"
+      style={{ backgroundImage: 'url(/fondo.jpeg)' }}
+    >
+      {/* Contenedor del texto y botón */}
       
-      <button
-        className="absolute bottom-20 text-blue-600 bg-white px-8 py-4 text-lg font-Goldplay"
-      >
-        <Link href="#acerca-de-nosotros">
-        Descubre Más
-        </Link>
-      </button>
-      
+      <div className="flex flex-col items-start space-y-6 max-w-[820px] pl-10 md:pl-20 lg:pl-32">
+        <h2 className="text-4xl md:text-5xl font-bold text-[#2d0a3b] leading-relaxed">
+          {slides[currentSlide]}
+        </h2>
+        <button className="bg-[#421575] text-white px-8 py-4 text-lg rounded-md hover:bg-[#2d0a3b] transition-all">
+          <Link href="#acerca-de-nosotros">Descubre Más</Link>
+        </button>
+      </div>
     </div>
   );
-};
+}
+
+

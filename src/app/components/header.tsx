@@ -55,7 +55,7 @@ export default function Header() {
     >
 
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="bg-gradient-to-r from-orange-400 via-purple-600 to-blue-500 bg-clip-text font-semibold font-Goldplay text-transparent text-3xl">
+        <h1 className="text-3xl md:text-3xl font-bold text-[#2d0a3b]">
           {"FAMILY WEB"}
         </h1>
         <nav>
