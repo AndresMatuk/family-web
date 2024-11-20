@@ -37,10 +37,11 @@ export default function Home() {
   return (
     <>
     
-      <section className=" w-full">
+      <section className=" w-full"
+      >
         <Carousel />
       </section>
-      <section className="py-16" style={{ backgroundImage: 'url(/fondo3.jpg)' }}>
+      <section className="py-16" id="acerca-de-nosotros" style={{ backgroundImage: 'url(/fondo3.jpg)' }}>
   <div className="max-w-4xl mx-auto text-center p-12 px-6">
     {/* Calificaciones */}
     <div className="flex justify-center items-center space-x-6 mb-6">
@@ -64,7 +65,6 @@ export default function Home() {
 </section>
 
       <motion.section
-        id="acerca-de-nosotros"
         className="container mx-auto py-16 px-4"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
