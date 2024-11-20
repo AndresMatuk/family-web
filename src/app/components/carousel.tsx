@@ -5,9 +5,9 @@ import { useState, useEffect } from 'react';
 
 export default function Carousel() {
   const slides = [
-    "Transformamos vidas, construimos futuro. Juntos, hacemos posible lo imposible.",
-    "De la adversidad al éxito: empoderamos emprendedores, fortalecemos familias y creamos un cambio duradero.",
-    "Más que ayuda, brindamos esperanza y oportunidades para un mañana más brillante y sostenible."
+    "Fortalecemos los lazos familiares con soluciones digitales accesibles y personalizadas.", 
+    "Encuentra orientación, apoyo y herramientas para construir un hogar lleno de bienestar.", 
+    "Family Web: Tu espacio integral para el crecimiento emocional y social de tu familia."
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);

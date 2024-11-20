@@ -1,16 +1,16 @@
 "use client";
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
-import { FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 export default function Header() {
   const currentPath = usePathname();
-  const hiddenRoutes = ['/room'];
+  const hiddenRoutes = ["/room"];
 
-  // Hooks: siempre se inicializan
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false); // Nuevo estado para el scroll
   const dropdownRef = useRef<HTMLLIElement | null>(null);
 
   useEffect(() => {
@@ -20,9 +20,16 @@ export default function Header() {
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0); // Cambiar el estado según el scroll
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -34,16 +41,22 @@ export default function Header() {
     setIsOpen(false);
   };
 
-  // Lógica condicional después de los hooks
-  if (hiddenRoutes.some(route => currentPath.startsWith(route))) {
+  if (hiddenRoutes.some((route) => currentPath.startsWith(route))) {
     return null;
   }
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white text-black py-4 shadow-md z-50">
+    <header
+      className={`fixed top-0 left-1/2 transform -translate-x-1/2 w-full py-4 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white shadow-lg rounded-2xl max-w-[85%] mx-4 my-2 border border-gray-200"
+          : "bg-white shadow-md border-none"
+      }`}
+    >
+
       <div className="container mx-auto flex justify-between items-center">
         <h1 className="bg-gradient-to-r from-orange-400 via-purple-600 to-blue-500 bg-clip-text font-semibold font-Goldplay text-transparent text-3xl">
-          {'FAMILY WEB'}
+          {"FAMILY WEB"}
         </h1>
         <nav>
           <ul className="flex space-x-4">
@@ -53,10 +66,7 @@ export default function Header() {
               </Link>
             </li>
             <li className="relative">
-              <button
-                onClick={toggleDropdown}
-                className="hover:underline focus:outline-none"
-              >
+              <button onClick={toggleDropdown} className="hover:underline focus:outline-none">
                 Terapia en vivo
               </button>
               {isOpen && (
@@ -88,7 +98,7 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:underline">
+              <Link href="/foro" className="hover:underline">
                 Foros
               </Link>
             </li>
@@ -107,6 +117,5 @@ export default function Header() {
         </nav>
       </div>
     </header>
-    
   );
 }
