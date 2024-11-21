@@ -3,14 +3,17 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaBars, FaTimes, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 import Image from 'next/image';
+
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const currentPath = usePathname();
   const hiddenRoutes = ["/room"];
 
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false); // Nuevo estado para el scroll
+  const [isScrolled, setIsScrolled] = useState(false);
   const dropdownRef = useRef<HTMLLIElement | null>(null);
 
   useEffect(() => {
@@ -21,8 +24,16 @@ export default function Header() {
     };
 
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0); // Cambiar el estado según el scroll
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
     };
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
+    }
 
     document.addEventListener("mousedown", handleClickOutside);
     window.addEventListener("scroll", handleScroll);
@@ -53,26 +64,41 @@ export default function Header() {
           : "bg-white shadow-md border-none"
       }`}
     >
+      <div className="container mx-auto flex justify-between items-center px-4 sm:px-8 lg:px-16 max-w-screen-lg">
+        {/* Logo */}
+        <div className="flex items-center space-x-0">
+          <Image
+            src={"/icons/iconText.png"}
+            alt={"Family Web"}
+            width={190}
+            height={190}
+          />
+        </div>
 
-      <div className="container mx-auto flex justify-between items-center">
-      <div className="flex items-center space-x-0">
-    <Image
-      src={"/icons/iconText.png"}
-      alt={"Family Web"}
-      width={190}
-      height={190}
-    />
-    
-  </div>
-        <nav>
-          <ul className="flex space-x-4 text-[#2d0a3b]">
+        {/* Hamburger Menu for mobile */}
+        <div className="lg:hidden">
+          <button onClick={toggleMenu} className="text-2xl focus:outline-none">
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
+
+        {/* Navigation */}
+        <nav
+          className={`${
+            isMenuOpen ? "block" : "hidden"
+          } lg:flex flex-col lg:flex-row absolute lg:relative top-16 left-0 lg:top-0 lg:left-auto bg-white lg:bg-transparent w-full lg:w-auto p-4 lg:p-0 shadow-lg lg:shadow-none transition-all duration-300`}
+        >
+          <ul className="flex flex-col lg:flex-row lg:space-x-4 text-[#2d0a3b] space-y-4 lg:space-y-0">
             <li>
               <Link href="/" className="hover:underline">
                 Inicio
               </Link>
             </li>
             <li className="relative">
-              <button onClick={toggleDropdown} className="hover:underline focus:outline-none">
+              <button
+                onClick={toggleDropdown}
+                className="hover:underline focus:outline-none"
+              >
                 Terapia en vivo
               </button>
               {isOpen && (
@@ -90,7 +116,10 @@ export default function Header() {
                       Anuncio de reuniones
                     </Link>
                   </div>
-                  <div className="p-4 hover:bg-gray-100" onClick={handleLinkClick}>
+                  <div
+                    className="p-4 hover:bg-gray-100"
+                    onClick={handleLinkClick}
+                  >
                     <Link href="/videoCall" className="text-gray-800">
                       Reuniones en vivo
                     </Link>
@@ -108,7 +137,8 @@ export default function Header() {
                 Foros
               </Link>
             </li>
-            <div className="flex mb-1 space-x-4">
+            {/* Social Media Icons */}
+            <div className="flex space-x-4">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
                 <FaFacebook className="text-2xl text-[#2d0a3b] hover:text-blue-500" />
               </a>
