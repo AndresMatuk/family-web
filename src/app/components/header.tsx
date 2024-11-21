@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { FaBars, FaTimes, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaBars, FaTimes, FaFacebook, FaTwitter, FaInstagram  } from "react-icons/fa";
 import Image from 'next/image';
 
 export default function Header() {
@@ -139,15 +139,16 @@ export default function Header() {
             </li>
             {/* Social Media Icons */}
             <div className="flex space-x-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/share/19x45j3aVw/" target="_blank" rel="noopener noreferrer">
                 <FaFacebook className="text-2xl text-[#2d0a3b] hover:text-blue-500" />
               </a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
                 <FaTwitter className="text-2xl text-[#2d0a3b] hover:text-blue-400" />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin className="text-2xl text-[#2d0a3b] hover:text-blue-700" />
+              <a href="https://www.instagram.com/family_w3b/" target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="text-2xl text-[#2d0a3b] hover:text-pink-500" />
               </a>
+
             </div>
           </ul>
         </nav>
