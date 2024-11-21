@@ -51,19 +51,17 @@ const toggleSection = (index: number) => {
 const profesionalesMostrados = verMas ? profesionales : profesionales.slice(0, 4);
 
   return (
-    <div className="flex w-full h-screen bg-gray-800 pt-16"> {/* Añadido pt-16 para compensar el header */}
+    <div className="flex w-full h-screen bg-white  pt-16"> {/* Añadido pt-16 para compensar el header */}
       {/* Sección de reuniones */}
        <section className="w-2/3 p-8">
-          <h1 className="text-left bg-gradient-to-r from-orange-400 via-purple-600 to-blue-500 bg-clip-text font-extrabold text-transparent text-6xl mb-6">
-            FAMILY WEB
-          </h1>
-       <h2 className="text-4xl text-white font-bold mb-4">Anuncios de Reuniones</h2>
+          
+       <h2 className="text-4xl font-roboto text-[#2d0a3b] font-bold mb-4">Anuncios de Reuniones</h2>
         <div className="space-y-4">
           {reunionesFiltradas.map((section, index) => (
             <div key={index}>
               <button
                 onClick={() => toggleSection(index)}
-                className={`w-full text-left py-4 px-6 bg-gray-600 text-white font-bold rounded-md focus:outline-none transition-transform transform ${
+                className={`w-full font-roboto text-2xl text-left py-4 px-6 bg-gradient-to-r from-[#aa9df1] to-[#2d0a3b] text-white font-bold rounded-md focus:outline-none transition-transform transform ${
                   activeIndex === index ? 'translate-x-0' : '-translate-x-4'
                 } hover:scale-105`}
               >
@@ -78,7 +76,7 @@ const profesionalesMostrados = verMas ? profesionales : profesionales.slice(0, 4
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
-                    className="overflow-hidden p-6 bg-gray-700 rounded-md"
+                    className="overflow-hidden p-6 font-roboto shadow-2xl bg-[#2d0a3b]  rounded-md"
                   >
                     <p className="text-white text-lg">{section.content}</p>
                   </motion.div>
@@ -89,14 +87,16 @@ const profesionalesMostrados = verMas ? profesionales : profesionales.slice(0, 4
       </section>
 
       {/* Sección de profesionales y temas */}
-      <aside className="w-1/3 p-8 bg-gray-900 text-white max-h-screen overflow-y-auto">
+      <aside className="w-1/3 p-8 bg-[#dad5f5] text-[#2d0a3b]  max-h-screen overflow-y-auto"
+      style={{ backgroundImage: 'url(/fondo6.png)' }}
+      >
   <h2 className="text-2xl font-bold mb-4">Nuestros Profesionales</h2>
-  <div className="grid grid-cols-2 gap-4 mb-8">
+  <div className="grid grid-cols-2 gap-4 mb-8 text-[#2d0a3b]">
   {profesionalesMostrados.map((profesional, index) => (
       <button
         key={index}
         onClick={() => handleProfesionalSeleccionado(profesional.nombre)}
-        className={`p-4 bg-gray-700 rounded-md hover:bg-gray-600 ${
+        className={`rounded-lg shadow-md p-4 bg-white hover:bg-[#aa9df1] ${
           profesionalSeleccionado === profesional.nombre ? 'bg-blue-500' : ''
         }`}
       >
@@ -113,7 +113,7 @@ const profesionalesMostrados = verMas ? profesionales : profesionales.slice(0, 4
     {profesionales.length > 4 && (
           <button
             onClick={() => setVerMas(!verMas)}
-             className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-blue-600"
+             className="px-4 py-2 bg-white shadow-md  text-[#2d0a3b] rounded hover:bg-[#aa9df1]"
           >
             {verMas ? 'Ver Menos' : 'Ver Más'}
           </button>
@@ -126,7 +126,7 @@ const profesionalesMostrados = verMas ? profesionales : profesionales.slice(0, 4
       <button
         key={index}
         onClick={() => handleTemaSeleccionado(tema)}
-        className={`w-full py-2 px-4 bg-gray-700 rounded-md hover:bg-gray-600 ${
+        className={`w-full py-2 px-4 bg-white shadow-md text-[#2d0a3b] rounded-md hover:bg-[#aa9df1]${
           temaSeleccionado === tema ? 'bg-blue-500' : ''
         }`}
       >
@@ -136,7 +136,7 @@ const profesionalesMostrados = verMas ? profesionales : profesionales.slice(0, 4
     <div className="mb-4 p-5 flex justify-center">
       <button 
         onClick={handleMostrarTodos}
-        className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-blue-600"
+        className="px-4 py-2 bg-white shadow-md  text-[#2d0a3b] rounded hover:bg-[#aa9df1]"
       >
         Mostrar todas las reuniones
       </button>

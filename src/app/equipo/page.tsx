@@ -22,8 +22,8 @@ export default function Team() {
 
   return (
     <>
-      <section className="relative h-screen bg-gray-900 text-white flex items-center justify-center">
-        <div className="absolute inset-0 bg-gray-800 opacity-70"></div>
+      <section className="relative h-screen bg-gradient-to-r from-[#aa9df1] to-[#2d0a3b] text-white flex items-center justify-center">
+        <div className="absolute inset-0 bg-[#2d0a3b] opacity-70"></div>
         <div
           className="h-full w-full bg-cover bg-center mx-auto"
           style={{ backgroundImage: 'url(/equipo.jpg)' }}
@@ -44,38 +44,56 @@ export default function Team() {
           </div>
         </div>
       </section>
-
-      <section className="container mx-auto p-8 h-screen flex flex-col justify-start pt-16">
-      <h2 className="text-4xl text-center mb-9 text-gray-800 font-bold pt-8">NUESTROS PROFESIONALES</h2>
-      <div className={`flex ${seleccionado ? 'flex-wrap' : 'flex-row'} gap-4 items-center flex-grow` }> 
+                   
+      <section className="mx-auto p-8 min-h-screen flex flex-col justify-start pt-16"
+       style={{ backgroundImage: 'url(/fondo4.png)' }}
+      >
+        
+        <div className="mx-auto container w-full p-8 h-screen flex flex-col justify-start pt-16">
+      <h2 className="text-5xl text-center mb-9 font-roboto text-[#2d0a3b] font-bold pt-8">NUESTROS PROFESIONALES</h2>
+      <div className={`flex ${seleccionado ? 'flex-wrap' : 'flex-row'} gap-4 items-center flex-grow`}>
         {profesionalesOrdenados.map((profesional) => (
           <div
-            key={profesional.nombre}
-            onClick={() => handleSeleccionar(profesional.nombre)}
-            className={`cursor-pointer p-4 bg-gray-900 text-white rounded-md transition-all duration-300 ${
-              seleccionado === profesional.nombre ? 'w-full flex h-96' : 'w-1/5 h-[390px]' 
+          key={profesional.nombre}
+          onClick={() => handleSeleccionar(profesional.nombre)}
+          className={`shadow-lg cursor-pointer p-4 bg-white text-[#2d0a3b] rounded-md transition-all duration-300 ${
+            seleccionado === profesional.nombre ? 'w-full flex h-96' : 'w-1/5 h-[390px]'
+          }`}
+        >
+          <div
+            className={`flex ${
+               seleccionado === profesional.nombre ? 'items-center justify-center w-2/5 h-auto ': 'w-full h-48'
             }`}
+            style={{
+              height: seleccionado === profesional.nombre ? '100%' : 'auto', // Asegura que el contenedor use todo el espacio disponible cuando esté ampliado
+            }}
           >
             <Image
               src={profesional.imagen}
               alt={profesional.nombre}
               width={500}
               height={500}
-              className={`rounded-md mb-2 ${
-                seleccionado === profesional.nombre ? 'w-48 h-48' : 'w-full h-48'
+                className={`rounded-md object-cover ${
+                seleccionado === profesional.nombre ? 'w-full h-full' : 'w-full h-48'
               } object-cover`}
             />
-            <div className={`ml-4 ${seleccionado === profesional.nombre ? 'flex flex-col' : ''}`}>
-              <p className="text-lg text-center p-4 font-bold">{profesional.nombre}</p>
-              <p className="text-lg text-gray-300 text-center p-0">{profesional.descripcion}</p>
-              {seleccionado === profesional.nombre && (
-                <>
-                  <p className="text-sm mt-2">{profesional.experiencia}</p>
-                </>
-              )}
-            </div>
           </div>
+          <div className={`ml-4 ${seleccionado === profesional.nombre ? 'flex flex-col overflow-y-auto max-h-full p-4' : ''}`}>
+            <p className="text-center font-roboto text-2xl p-4 font-bold">{profesional.nombre}</p>
+            <p className="text-lg font-roboto text-[#5a3769] text-center p-0">{profesional.especialidad}</p>
+            {seleccionado === profesional.nombre && (
+              <>
+                <p className="font-roboto text-[#5a3769] text-lg mx-4 px-4"><p className="font-roboto font-bold text-[#2d0a3b] text-2xl mt-2">Experiencia </p>{profesional.experiencia}</p>
+                <p className="font-roboto text-[#5a3769] text-lg mx-4 px-4"><p className="font-roboto font-bold text-[#2d0a3b] text-2xl mt-2">Descripcion</p>{profesional.descripcion}</p>
+                <p className="font-roboto text-[#5a3769] text-lg mx-4 px-4"><p className="font-roboto font-bold text-[#2d0a3b] text-2xl mt-2">Enfoque Terapéutico </p>{profesional.enfoqueTerapéutico}</p>
+                <p className="font-roboto text-[#5a3769] text-lg mx-4 px-4"><p className="font-roboto font-bold text-[#2d0a3b] text-2xl mt-2">Descripción Personal</p>{profesional.descripciónPersonal}</p>
+                <p className="font-roboto text-[#5a3769] text-lg mx-4 px-4"><p className="font-roboto font-bold text-[#2d0a3b] text-2xl mt-2">Testimonio de Pacientes  </p>{profesional.testimonioPacientes}</p>
+              </>
+            )}
+          </div>
+        </div>
         ))}
+      </div>
       </div>
     </section>
       <Footer />

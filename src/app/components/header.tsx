@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
-
+import Image from 'next/image';
 export default function Header() {
   const currentPath = usePathname();
   const hiddenRoutes = ["/room"];
@@ -55,11 +55,17 @@ export default function Header() {
     >
 
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-3xl md:text-3xl font-roboto font-bold text-[#2d0a3b]">
-          {"FAMILY WEB"}
-        </h1>
+      <div className="flex items-center space-x-0">
+    <Image
+      src={"/icons/iconText.png"}
+      alt={"Family Web"}
+      width={190}
+      height={190}
+    />
+    
+  </div>
         <nav>
-          <ul className="flex space-x-4">
+          <ul className="flex space-x-4 text-[#2d0a3b]">
             <li>
               <Link href="/" className="hover:underline">
                 Inicio
@@ -104,13 +110,13 @@ export default function Header() {
             </li>
             <div className="flex mb-1 space-x-4">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                <FaFacebook className="text-2xl text-gray-800 hover:text-blue-500" />
+                <FaFacebook className="text-2xl text-[#2d0a3b] hover:text-blue-500" />
               </a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <FaTwitter className="text-2xl text-gray-800 hover:text-blue-400" />
+                <FaTwitter className="text-2xl text-[#2d0a3b] hover:text-blue-400" />
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin className="text-2xl text-gray-800 hover:text-blue-700" />
+                <FaLinkedin className="text-2xl text-[#2d0a3b] hover:text-blue-700" />
               </a>
             </div>
           </ul>

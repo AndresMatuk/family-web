@@ -59,12 +59,13 @@ const Forum = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100"
+    style={{ backgroundImage: 'url(/fondo4.png)' }}>
       <main className="container mx-auto p-6 pt-20">
         {/* Sección para agregar un nuevo tema */}
         <section className="mb-8 bg-white p-6 rounded-lg shadow-md">
-          <p className="text-gray-700 mb-6 text-4xl font-blond text-left">Foro</p>
-          <h2 className="text-lg font-semibold mb-4">Crear nuevo tema</h2>
+          <p className="text-4xl text-left mb-9 font-roboto text-[#2d0a3b] font-bold pt-8">Foro</p>
+          <h2 className="text-lg text-[#2d0a3b] font-roboto font-semibold mb-4">Crear nuevo tema</h2>
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -87,7 +88,7 @@ const Forum = () => {
             ></textarea>
             <button
               type="submit"
-              className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-blue-700"
+              className="bg-[#2d0a3b] text-white px-3 py-2 text-lg rounded-md hover:bg-[#752fbb] transition-all"
             >
               Publicar
             </button>
@@ -96,7 +97,7 @@ const Forum = () => {
 
         {/* Sección para mostrar los temas */}
         <section>
-          <h2 className="text-lg font-semibold mb-4">Temas recientes</h2>
+          <h2 className="text-2xl text-left mb-9 font-roboto text-[#2d0a3b] font-bold pt-8">Temas recientes</h2>
           <div className="space-y-4">
             {topics.length > 0 ? (
               topics.map((topic) => (
@@ -104,10 +105,10 @@ const Forum = () => {
                   key={topic.id}
                   className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition"
                 >
-                  <h3 className="text-blue-600 font-semibold text-lg">
+                  <h3 className="font-roboto text-[#2d0a3b] font-semibold text-lg">
                     {topic.title}
                   </h3>
-                  <p className="text-gray-700">{topic.message}</p>
+                  <p className="font-roboto text-gray-700">{topic.message}</p>
                   <p className="text-sm text-gray-500 mt-2">
                     {topic.createdAt ? new Date(topic.createdAt.seconds * 1000).toLocaleString() : 'Fecha no disponible'}
                   </p>

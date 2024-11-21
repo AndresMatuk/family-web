@@ -5,6 +5,7 @@ import useUser from "../hooks/useUser";
 import { useRouter } from "next/navigation";
 import { v4 as uuid } from 'uuid';
 import { motion } from "framer-motion";
+import Image from 'next/image';
 
 export default function VideoCall() {
   const { fullName, setFullName } = useUser();
@@ -16,7 +17,8 @@ export default function VideoCall() {
   }, [setFullName]);
 
   return (
-    <div className="flex w-full h-screen bg-gray-900">
+    <div className="flex w-full h-screen bg-gradient-to-r from-[#aa9df1] to-[#2d0a3b]"
+    >
       {/* Sección izquierda: Contenido */}
       <div className="w-2/3 p-12 flex flex-col justify-center">
         <motion.div
@@ -25,13 +27,20 @@ export default function VideoCall() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="bg-gradient-to-r from-orange-400 via-purple-600 to-blue-500 bg-clip-text font-extrabold text-transparent text-6xl mb-6">
-            FAMILY WEB
-          </h1>
-          <h2 className="text-white text-3xl mb-4">
+          
+          <div className="flex items-center justify-center">
+  <Image
+    src="/icons/iconText.png"
+    width={500}
+    height={700}
+    alt="Imagen 1"
+  />
+</div>
+
+          <h2 className="text-white font-roboto text-3xl mb-4">
             Reuniones en vivo con Profesionales
           </h2>
-          <p className="text-gray-300 max-w-xl mx-auto mb-8">
+          <p className="text-white font-roboto text-2xl max-w-xl mx-auto mb-8">
             Ingresa el código que te proporcionamos para unirte a una reunión o crea una nueva reunión y envíanos un link para que nos podamos unir y ayudarte.
           </p>
         </motion.div>
@@ -49,7 +58,7 @@ export default function VideoCall() {
             className="border rounded-md px-4 py-2 w-full text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Ingresa tu nombre"
           />
-          {fullName && fullName.length >= 3 && (
+          {fullName && fullName.length >=1 && (
             <>
               <div className="flex gap-4">
                 <input
@@ -61,7 +70,7 @@ export default function VideoCall() {
                   placeholder="Ingresa la room ID para unirte"
                 />
                 <button
-                    className="rounded-md bg-gray-700 px-10 py-[11px] text-sm font-medium text-white focus:outline-none sm:w-auto"
+                    className="rounded-md bg-[#421575] px-10 py-[11px] text-sm font-medium text-white focus:outline-none sm:w-auto"
                     onClick={() => router.push(`/room/${roomID}`)}
                     disabled={!roomID}
                   >
@@ -82,7 +91,7 @@ export default function VideoCall() {
       </div>
 
       {/* Sección derecha: Imagen */}
-      <div className="w-1/3 bg-cover bg-center" style={{ backgroundImage: 'url(/reunion.jpg)' }}>
+      <div className="w-1/3 bg-cover bg-center" style={{ backgroundImage: 'url(/fondo7.jpeg)' }}>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

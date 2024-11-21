@@ -63,16 +63,17 @@ export default function Home() {
     
   </div>
 </section>
-
+<section className="" style={{ backgroundImage: 'url(/fondo4.png)' }}>
       <motion.section
         className="container mx-auto py-16 px-4"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
+        
       >
          <p className="text-3xl text-center md:text-5xl font-roboto font-bold text-[#2d0a3b] mb-4">
-         Bienvenido a FamilyWeb: Tu Aliado en el Bienestar Familiar
+         Bienvenido a FamilyWeb:<br />  Tu Aliado en el Bienestar Familiar
       </p>
       <p></p>
       <p className="text-gray-600 text-2xl font-roboto mb-6 p-11">
@@ -108,48 +109,73 @@ export default function Home() {
         ))}
       </div>
     </div>
-      
-        <section className="flex flex-col md:flex-row items-center justify-between py-[120px] px-8 bg-gray-100">
-      
-      <div className="md:w-1/2 mb-8 md:mb-0">
-      <hr></hr>
-        <h2 className="text-3xl mb-4 text-[#3E369A]  font-semiblond text-left font-Goldplay ">Nuestro Compromiso</h2>
-        <p className="text-lg text-left text-gray-600 mb-6">
-          En Family Web, trabajamos incansablemente para proporcionar apoyo integral y recursos de calidad para ayudar a las familias a crecer y fortalecerse.
-        </p>
-        <button className="bg-gray-700 text-white px-6 py-2 rounded-md hover:bg-gray-600 transition-all">
-          Conoce más
-        </button>
-      </div>
-
-      {/* Sección de imágenes a la derecha */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:w-1/2">
-        <Image src="/img.jpg" width={450} 
-    height={450}  alt="Imagen 1" className="rounded-lg shadow-md" />
-        <Image src="/img.jpg" width={450} 
-    height={450}  alt="Imagen 2" className="rounded-lg shadow-md" />
-        <Image src="/img.jpg" width={450} 
-    height={450}  alt="Imagen 3" className="rounded-lg shadow-md" />
-      </div>
-    </section>
-
-    <div className=" w-full relative h-screen bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center text-center text-white">
-      <div className="absolute inset-0 bg-gradient-to-r from-orange-400 via-purple-500 to-blue-500 opacity-70" />
-      <h2 className="relative text-4xl md:text-5xl font-bold px-4">
-        VIDEO LLAMADAS EN VIVO
-      </h2>
+  
+    <section className="flex flex-col md:flex-row items-center justify-between py-[120px] px-8 bg-gray-100">
+  {/* Sección de texto a la izquierda */}
+  <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8"> {/* Espaciado adicional a la derecha */}
     
+    <h2 className="text-4xl mb-4 text-[#2d0a3b] font-semiblond text-left font-roboto p-5">
+      Nuestro Compromiso
+    </h2>
+    <p className="text-gray-600 text-2xl text-left font-roboto mb-6 ">
+      En FamilyWeb, estamos comprometidos no solo con ofrecer servicios, sino con construir un ecosistema de apoyo que promueva el bienestar emocional y la cohesión familiar en todo momento. Juntos, podemos crear un futuro más saludable y equilibrado para todos.
+    </p>
+    
+  </div>
 
-      <button
-        className="absolute bottom-20 text-blue-600 bg-white px-8 py-4 text-lg font-Goldplay"
-      >
-        <Link href="/videoCall">
-        Descubre Más
-        </Link>
-      </button>
-    </div>
+  {/* Sección de imágenes a la derecha */}
+  
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:w-1/2 md:pl-8"> {/* Espaciado adicional a la izquierda y mayor separación entre imágenes */}
+    <Image
+      src="/img.png"
+      width={500}
+      height={700}
+      alt="Imagen 1"
+      className="rounded-lg shadow-md"
+    />
+    <Image
+      src="/img2.png"
+      width={500}
+      height={700}
+      alt="Imagen 2"
+      className="rounded-lg shadow-md"
+    />
+    <Image
+      src="/img3.png"
+      width={500}
+      height={700}
+      alt="Imagen 3"
+      className="rounded-lg shadow-md"
+    />
+    <Image
+      src="/img4.png"
+      width={500}
+      height={700}
+      alt="Imagen 1"
+      className="rounded-lg shadow-md"
+    />
+    
+  </div>
+</section>
+
+<div
+  className="w-full relative h-screen bg-cover flex items-end text-white"
+  style={{ backgroundImage: 'url(/fondo5.png)' }}
+>
+  <div className="absolute max-w-[540px] bottom-8 left-8 text-left">
+    <h2 className="text-4xl md:text-5xl font-bold mb-4">
+      VIDEO LLAMADA
+    </h2>
+    <p className="text-gray-200  text-2xl text-left font-roboto mb-6 leading-relaxed">
+      En FamilyWeb, estamos comprometidos no solo con ofrecer servicios, sino con construir un ecosistema de apoyo que promueva el bienestar emocional y la cohesión familiar en todo momento. Juntos, podemos crear un futuro más saludable y equilibrado para todos.
+    </p>
+    <button className="bg-[#2d0a3b] text-white px-6 py-5 text-lg rounded-md hover:bg-[#752fbb] transition-all">
+    <Link href="/videoCall">Descubre Más</Link>
+    </button>
+  </div>
+</div>
       </motion.section>
-     
+      </section>  
       <Footer />
     </>
   );

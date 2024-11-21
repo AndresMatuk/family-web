@@ -7,9 +7,9 @@ export default function Footer() {
     script.type = 'text/javascript';
     script.onload = function() {
       window.voiceflow.chat.load({
-        verify: { projectID: "673d16a9b8ce5a960061699f" },
-        url: "https://general-runtime.voiceflow.com",
-        versionID: "production",
+        verify: { projectID: '673d16a9b8ce5a960061699f' },
+        url: 'https://general-runtime.voiceflow.com',
+        versionID: 'production'
       });
     };
     script.src = 'https://cdn.voiceflow.com/widget/bundle.mjs';
