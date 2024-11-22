@@ -88,6 +88,7 @@ export default function Team() {
                 <p className="font-roboto text-[#5a3769] text-lg mx-4 px-4"><p className="font-roboto font-bold text-[#2d0a3b] text-2xl mt-2">Enfoque Terapéutico </p>{profesional.enfoqueTerapéutico}</p>
                 <p className="font-roboto text-[#5a3769] text-lg mx-4 px-4"><p className="font-roboto font-bold text-[#2d0a3b] text-2xl mt-2">Descripción Personal</p>{profesional.descripciónPersonal}</p>
                 <p className="font-roboto text-[#5a3769] text-lg mx-4 px-4"><p className="font-roboto font-bold text-[#2d0a3b] text-2xl mt-2">Testimonio de Pacientes  </p>{profesional.testimonioPacientes}</p>
+                <p className="font-roboto text-[#5a3769] text-lg mx-4 px-4"><p className="font-roboto font-bold text-[#2d0a3b] text-2xl mt-2">Contacto </p>{profesional.contactos}</p>
               </>
             )}
           </div>
