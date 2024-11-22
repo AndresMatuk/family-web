@@ -1,6 +1,6 @@
 "use client";
 import { useState } from 'react';
-import { FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import Footer from '../components/footer';
 import { profesionales } from '../data/profesionalesData';
 import Image from 'next/image';
@@ -32,15 +32,15 @@ export default function Team() {
           <h1 className="text-5xl font-bold mb-6">Equipo de Profesionales</h1>
           <h1 className="text-3xl font-semibold mb-6">Nuestros Psicologos y T.S</h1>
           <div className="flex justify-center mb-4 space-x-4">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              <FaFacebook className="text-2xl text-white hover:text-blue-500" />
-            </a>
+          <a href="https://www.facebook.com/share/19x45j3aVw/" target="_blank" rel="noopener noreferrer">
+                <FaFacebook className="text-2xl text-[#2d0a3b] hover:text-blue-500" />
+              </a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
               <FaTwitter className="text-2xl text-white hover:text-blue-400" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin className="text-2xl text-white hover:text-blue-700" />
-            </a>
+            <a href="https://www.instagram.com/family_w3b/" target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="text-2xl text-[#2d0a3b] hover:text-pink-500" />
+              </a>
           </div>
         </div>
       </section>
