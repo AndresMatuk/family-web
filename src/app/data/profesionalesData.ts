@@ -64,28 +64,24 @@ export const profesionales = [
       title: "Reunion: Tu salud mental es importante para nosotros",
       content: "La salud mental es esencial para la armonía y el bienestar en la familia.",
       profesional: 'Dra. Angarita Garzón Nayely ', 
-      tema: 'Salud Mental',
-      contactos: '302 3680548'
+      tema: 'Salud Mental'
     },
     {
       title: "Reunion: Hablemos de la familia",
       content: "El apoyo mutuo en los momentos difíciles fortalece los lazos familiares.",
       profesional: 'Lic. Reyes Machuca Samuel',  
-      tema: 'Comunicación',
-      contactos: '313 5700783'
+      tema: 'Comunicación'
     },
     {
       title: "Reunion: Mejoremos la comunicacion para evitar conflictos",
       content: "La comunicación efectiva es la clave para resolver los conflictos.",
       profesional: 'Psicóloga Díaz León Eliana Marcela', 
-      tema: 'Resolución de Conflictos',
-      contactos: '320 4041131'
+      tema: 'Resolución de Conflictos'
     },
     {
       title: "Reunion: hablemos de la crianza",
       content: "La comunicación efectiva es la clave para resolver los conflictos.",
       profesional: 'Dra. Gómez Leydi Tatiana ', 
-      tema: 'Crianza',
-      contactos: '305 4831001'
+      tema: 'Crianza'
     },
   ];

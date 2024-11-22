@@ -108,7 +108,6 @@ const profesionalesMostrados = verMas ? profesionales : profesionales.slice(0, 4
           className="w-full h-[180px] object-cover rounded-md mb-2"
         />
         <p>{profesional.nombre}</p>
-        <p>{profesional.contactos}</p>
       </button>
     ))}
     {profesionales.length > 4 && (

@@ -94,7 +94,6 @@ export default function Reuniones() {
                 className="w-full h-[480px]  md:h-[180px]  object-cover rounded-md mb-2"
               />
               <p>{profesional.nombre}</p>
-              <p>{profesional.contactos}</p>
             </button>
           ))}
           {profesionales.length > 4 && (
