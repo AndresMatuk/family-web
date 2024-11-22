@@ -22,7 +22,9 @@ export default function Carousel() {
   return (
     <div
       className="relative h-screen bg-cover bg-center bg-no-repeat flex items-center justify-between px-16 text-black"
-      style={{ backgroundImage: 'url(/fondo.jpeg)' }}
+      style={{
+        backgroundImage: window.innerWidth < 1350 ? 'url(/fondo9.png)' : 'url(/fondo.jpeg)',
+      }}
     >
       {/* Contenedor del texto y botón */}
       
