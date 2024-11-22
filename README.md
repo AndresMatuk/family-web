@@ -15,3 +15,4 @@ Funciones del sistema:
 - Seccion de Anuncio de Reuniones, en esta seccion podras saber las reuniones anunciadas por los trabajadores sociales y psicologos de la pagina, a su vez conoceras los temas disponibles en el momento
 - Seccion de Nustros Psicologos y T.S, Este espacio está diseñado para que los usuarios conozcan a los profesionales que forman parte de nuestro equipo y puedan elegir lo más adecuado según sus necesidades.
   
+https://github.com/user-attachments/assets/66b610ad-f31c-440a-af00-558cc15102ea 
