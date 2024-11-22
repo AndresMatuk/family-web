@@ -139,14 +139,14 @@ export default function Header() {
             </li>
             {/* Social Media Icons */}
             <div className="flex space-x-4">
-              <a href="https://www.facebook.com/share/19x45j3aVw/" target="_blank" rel="noopener noreferrer">
-                <FaFacebook className="text-2xl text-[#2d0a3b] hover:text-blue-500" />
+            <a href="https://www.facebook.com/share/19x45j3aVw/" target="_blank" rel="noopener noreferrer">
+                <FaFacebook className="text-2xl text-white hover:text-pink-500" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <FaTwitter className="text-2xl text-[#2d0a3b] hover:text-blue-400" />
-              </a>
-              <a href="https://www.instagram.com/family_w3b/" target="_blank" rel="noopener noreferrer">
-                <FaInstagram className="text-2xl text-[#2d0a3b] hover:text-pink-500" />
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+              <FaTwitter className="text-2xl text-white hover:text-pink-500" />
+            </a>
+            <a href="https://www.instagram.com/family_w3b/" target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="text-2xl text-white hover:text-pink-500" />
               </a>
 
             </div>
