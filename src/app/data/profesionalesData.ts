@@ -2,7 +2,7 @@
 export const profesionales = [
   { 
     nombre: 'Dra. Angarita Garzón Nayely ', 
-    imagen: '/profesional1.jpg',
+    imagen: '/profesionales/profesional1.jpg',
     especialidad: 'Psicología Clínica',
     descripcion: 'Especialista en salud mental y bienestar familiar.',
     experiencia: '- Más de 10 años de experiencia en terapia individual y familiar. \n - Ha trabajado en clínicas de salud mental y hospitales, así como en consultas privadas. \n - Participación en conferencias sobre salud mental y bienestar emocional.',
@@ -13,7 +13,7 @@ export const profesionales = [
   },
   { 
     nombre: 'Lic. Reyes Machuca Samuel', 
-    imagen: '/profesional2.png',
+    imagen: '/profesionales/profesional2.png',
     especialidad: 'Trabajo Social',
     descripcion: 'Experto en manejo de conflictos y mediación.',
     experiencia: ' - Trabajador social con más de 8 años de experiencia en intervención comunitaria y apoyo a familias en crisis.\n - Ha colaborado con diversas ONGs y programas gubernamentales para mejorar el bienestar social.',
@@ -24,7 +24,7 @@ export const profesionales = [
   },
   { 
     nombre: 'Psicóloga Díaz Eliana Marcela', 
-    imagen: '/profesional3.jpg',
+    imagen: '/profesionales/profesional3.jpg',
     especialidad: 'Psicología Infantil y Adolescente',
     descripcion: 'Psicólogo especializado en comunicación efectiva.',
     experiencia: '-Más de 6 años trabajando con niños y adolescentes, abordando problemas como el bullying, ansiedad escolar y trastornos del comportamiento. \n- Formación continua en terapias basadas en el juego y técnicas lúdicas.',
@@ -35,7 +35,7 @@ export const profesionales = [
   },
   { 
     nombre: 'Dra. Gómez Leydi Tatiana ', 
-    imagen: '/profesional4.jpg',
+    imagen: '/profesionales/profesional4.jpg',
     descripcion: 'Psicología Organizacional',
     especialidad: 'Psicología Infantil y Adolescente',
     experiencia: '  - Consultora en bienestar laboral con más de 12 años ayudando a empresas a implementar programas de salud mental. \n - Ha trabajado con diversas organizaciones para desarrollar estrategias efectivas que promuevan un ambiente laboral saludable.',
@@ -47,7 +47,7 @@ export const profesionales = [
 
   { 
     nombre: 'Lic. Machuca Samuel ', 
-    imagen: '/profesional2.png',
+    imagen: '/profesionales/profesional2.png',
     especialidad: 'Trabajo Social',
     descripcion: 'Experto en manejo de conflictos y mediación.',
     experiencia: ' - Trabajador social con más de 8 años de experiencia en intervención comunitaria y apoyo a familias en crisis.\n - Ha colaborado con diversas ONGs y programas gubernamentales para mejorar el bienestar social.',

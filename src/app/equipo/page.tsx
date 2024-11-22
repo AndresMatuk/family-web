@@ -26,7 +26,7 @@ export default function Team() {
         <div className="absolute inset-0 bg-[#2d0a3b] opacity-70"></div>
         <div
           className="h-full w-full bg-cover bg-center mx-auto"
-          style={{ backgroundImage: 'url(/equipo.jpg)' }}
+          style={{ backgroundImage: 'url(/profesionales/equipo.jpg)' }}
         ></div>
         <div className="relative p-8 max-w-4xl mx-auto text-center">
           <h1 className="text-5xl font-bold mb-6">Equipo de Profesionales</h1>
@@ -46,7 +46,7 @@ export default function Team() {
       </section>
                    
       <section className="mx-auto p-8 min-h-screen flex flex-col justify-start pt-16"
-       style={{ backgroundImage: 'url(/fondo4.png)' }}
+       style={{ backgroundImage: 'url(/fondos/fondo4.png)' }}
       >
         
         <div className="mx-auto container w-full p-8 h-screen flex flex-col justify-start pt-16">

@@ -88,7 +88,7 @@ const profesionalesMostrados = verMas ? profesionales : profesionales.slice(0, 4
 
       {/* Sección de profesionales y temas */}
       <aside className="w-1/3 p-8 bg-[#dad5f5] text-[#2d0a3b]  max-h-screen overflow-y-auto"
-      style={{ backgroundImage: 'url(/fondo6.png)' }}
+      style={{ backgroundImage: 'url(/fondos/fondo6.png)' }}
       >
   <h2 className="text-2xl font-bold mb-4">Nuestros Profesionales</h2>
   <div className="grid grid-cols-2 gap-4 mb-8 text-[#2d0a3b]">

@@ -46,7 +46,7 @@ export default function Home() {
   className="py-16"
   id="acerca-de-nosotros"
   style={{
-    backgroundImage: isClient && window.innerWidth < 1350 ? 'url(/fondo4.png)' : 'url(/fondo3.jpg)',
+    backgroundImage: isClient && window.innerWidth < 1350 ? 'url(/fondos/fondo4.png)' : 'url(/fondos/fondo3.jpg)',
   }}
 >
   <div className="max-w-4xl mx-auto text-center p-12 px-6">
@@ -70,7 +70,7 @@ export default function Home() {
   </div>
 </section>
 
-<section className="" style={{ backgroundImage: 'url(/fondo4.png)' }}>
+<section className="" style={{ backgroundImage: 'url(/fondos/fondo4.png)' }}>
       <motion.section
         className="container mx-auto py-16 px-4"
         initial={{ opacity: 0, y: 50 }}
@@ -131,28 +131,28 @@ export default function Home() {
   {/* Sección de imágenes a la derecha */}
   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:w-1/2 md:pl-8">
     <Image
-      src="/img.png"
+      src="/compromiso/img.png"
       width={500}
       height={700}
       alt="Imagen 1"
       className="rounded-lg shadow-md"
     />
     <Image
-      src="/img2.png"
+      src="/compromiso/img2.png"
       width={500}
       height={700}
       alt="Imagen 2"
       className="rounded-lg shadow-md"
     />
     <Image
-      src="/img3.png"
+      src="/compromiso/img3.png"
       width={500}
       height={700}
       alt="Imagen 3"
       className="hidden sm:block rounded-lg shadow-md"
     />
     <Image
-      src="/img4.png"
+      src="/compromiso/img4.png"
       width={500}
       height={700}
       alt="Imagen 4"
@@ -164,7 +164,7 @@ export default function Home() {
 
 <div
   className="w-full relative h-screen bg-cover flex items-end text-white"
-  style={{ backgroundImage: 'url(/fondo5.png)' }}
+  style={{ backgroundImage: 'url(/fondos/fondo5.png)' }}
 >
 <div className="absolute bottom-8 left-8 text-left max-w-[540px] md:max-w-[440px]">
   <h2 className="text-3xl md:text-5xl font-bold mb-4">

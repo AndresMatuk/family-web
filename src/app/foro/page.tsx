@@ -106,7 +106,7 @@ const Forum = () => {
   return (
     <div
       className="min-h-screen bg-gray-100"
-      style={{ backgroundImage: 'url(/fondo4.png)' }}
+      style={{ backgroundImage: 'url(/fondos/fondo4.png)' }}
     >
       <main className="container mx-auto p-6 pt-20">
         <section className="mb-8 bg-white p-6 rounded-lg shadow-md">

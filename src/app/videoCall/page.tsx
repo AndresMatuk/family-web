@@ -91,7 +91,7 @@ export default function VideoCall() {
       </div>
 
       {/* Sección derecha: Imagen */}
-      <div className="w-1/3 bg-cover bg-center" style={{ backgroundImage: 'url(/fondo7.jpeg)' }}>
+      <div className="w-1/3 bg-cover bg-center" style={{ backgroundImage: 'url(/fondos/fondo7.jpeg)' }}>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
