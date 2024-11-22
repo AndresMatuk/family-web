@@ -8,6 +8,7 @@ import Link from 'next/link';
 
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const isClient = typeof window !== 'undefined';
 
   const toggleSection = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -45,7 +46,7 @@ export default function Home() {
   className="py-16"
   id="acerca-de-nosotros"
   style={{
-    backgroundImage: window.innerWidth < 1350 ? 'url(/fondo4.png)' : 'url(/fondo3.jpg)',
+    backgroundImage: isClient && window.innerWidth < 1350 ? 'url(/fondo4.png)' : 'url(/fondo3.jpg)',
   }}
 >
   <div className="max-w-4xl mx-auto text-center p-12 px-6">

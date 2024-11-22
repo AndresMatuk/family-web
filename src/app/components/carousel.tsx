@@ -11,7 +11,7 @@ export default function Carousel() {
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
-
+  const isClient = typeof window !== 'undefined';
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
@@ -23,7 +23,7 @@ export default function Carousel() {
     <div
       className="relative h-screen bg-cover bg-center bg-no-repeat flex items-center justify-between px-16 text-black"
       style={{
-        backgroundImage: window.innerWidth < 1350 ? 'url(/fondo9.png)' : 'url(/fondo.jpeg)',
+        backgroundImage: isClient && window.innerWidth < 1350 ? 'url(/fondo9.png)' : 'url(/fondo.jpeg)',
       }}
     >
       {/* Contenedor del texto y botón */}
