@@ -20,6 +20,7 @@ export default function Carousel() {
   }, [slides.length]);
 
   return (
+    <section className=" w-full">
     <div
       className="relative h-screen bg-cover bg-center bg-no-repeat flex items-center justify-between px-16 text-black"
       style={{
@@ -37,6 +38,7 @@ export default function Carousel() {
         </button>
       </div>
     </div>
+    </section>
   );
 }
 

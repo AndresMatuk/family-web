@@ -1,9 +1,9 @@
 "use client";
 import { useState } from 'react';
-import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import Footer from '../components/footer';
 import { profesionales } from '../data/profesionalesData';
 import Image from 'next/image';
+import SocialLinks from '../components/Home/redesSociales';
 
 
 export default function Team() {
@@ -31,17 +31,7 @@ export default function Team() {
         <div className="relative p-8 max-w-4xl mx-auto text-center">
           <h1 className="text-5xl font-bold mb-6">Equipo de Profesionales</h1>
           <h1 className="text-3xl font-semibold mb-6">Nuestros Psicologos y T.S</h1>
-          <div className="flex justify-center mb-4 space-x-4">
-          <a href="https://www.facebook.com/share/19x45j3aVw/" target="_blank" rel="noopener noreferrer">
-                <FaFacebook className="text-2xl text-white hover:text-pink-500" />
-              </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <FaTwitter className="text-2xl text-white hover:text-pink-500" />
-            </a>
-            <a href="https://www.instagram.com/family_w3b/" target="_blank" rel="noopener noreferrer">
-                <FaInstagram className="text-2xl text-white hover:text-pink-500" />
-              </a>
-          </div>
+          <SocialLinks iconColor="text-white" />
         </div>
       </section>
                    

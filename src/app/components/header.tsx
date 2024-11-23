@@ -3,8 +3,9 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { FaBars, FaTimes, FaFacebook, FaTwitter, FaInstagram  } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import Image from 'next/image';
+import SocialLinks from "./Home/redesSociales";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -138,18 +139,7 @@ export default function Header() {
               </Link>
             </li>
             {/* Social Media Icons */}
-            <div className="flex space-x-4">
-              <a href="https://www.facebook.com/share/19x45j3aVw/" target="_blank" rel="noopener noreferrer">
-                <FaFacebook className="text-2xl text-[#2d0a3b] hover:text-pink-500"/>
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <FaTwitter className="text-2xl text-[#2d0a3b] hover:text-pink-500" />
-              </a>
-              <a href="https://www.instagram.com/family_w3b/" target="_blank" rel="noopener noreferrer">
-                <FaInstagram className="text-2xl text-[#2d0a3b] hover:text-pink-500" />
-              </a>
-
-            </div>
+            <SocialLinks iconColor="text-[#2d0a3b]" />
           </ul>
         </nav>
       </div>
