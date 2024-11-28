@@ -22,7 +22,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#2d0a3b] text-white py-4 mt-8">
       <div className="container mx-auto text-center">
-        <p>&copy; 2024 Family Web. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Ag System Information. Todos los derechos reservados.</p>
       </div>
     </footer>
   );
